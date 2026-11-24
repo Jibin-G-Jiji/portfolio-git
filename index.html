@@ -6,11 +6,14 @@
   <title>Alex Rivera | Portfolio</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --surface: #1e293b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --text: #1c1917;
+      --muted: #57534e;
+      --accent: #c2410c;
+      --border: #e7e5e4;
+      --header-bg: rgba(250, 248, 245, 0.9);
+      --btn-text: #ffffff;
     }
     * {
       box-sizing: border-box;
@@ -27,13 +30,13 @@
     header {
       position: sticky;
       top: 0;
-      background: rgba(15, 23, 42, 0.9);
+      background: var(--header-bg);
       backdrop-filter: blur(8px);
       padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #334155;
+      border-bottom: 1px solid var(--border);
       z-index: 100;
     }
     .logo {
@@ -47,6 +50,7 @@
       text-decoration: none;
       margin-left: 1.5rem;
       font-size: 0.95rem;
+      font-weight: 500;
       transition: color 0.2s;
     }
     nav a:hover {
@@ -83,13 +87,17 @@
     .btn {
       display: inline-block;
       background: var(--accent);
-      color: #0f172a;
+      color: var(--btn-text);
       padding: 0.75rem 1.5rem;
       border-radius: 6px;
       font-weight: 600;
       text-decoration: none;
       border: none;
       cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.9;
     }
     .grid {
       display: grid;
@@ -100,11 +108,13 @@
       background: var(--surface);
       padding: 1.5rem;
       border-radius: 10px;
-      border: 1px solid #334155;
-      transition: transform 0.2s;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(28, 25, 23, 0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(28, 25, 23, 0.08);
     }
     .card h3 {
       margin-bottom: 0.5rem;
@@ -117,7 +127,7 @@
     .card a {
       color: var(--accent);
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.9rem;
     }
     form {
@@ -129,16 +139,20 @@
     input, textarea {
       padding: 0.75rem;
       border-radius: 6px;
-      border: 1px solid #334155;
+      border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text);
       font-family: inherit;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid var(--accent);
+      border-color: transparent;
     }
     footer {
       text-align: center;
       padding: 2rem;
       color: var(--muted);
-      border-top: 1px solid #334155;
+      border-top: 1px solid var(--border);
       font-size: 0.9rem;
     }
   </style>
